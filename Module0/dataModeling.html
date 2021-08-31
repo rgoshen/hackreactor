@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // TITLE: EXAMPLE: Using an Object to Count Elements
+      var attendingOutput = [
+        "Dr. J",
+        "Dr. K",
+        "Dr. J",
+        "Dr. M",
+        "Dr. J",
+        "Dr. K",
+        "Dr. C",
+      ];
+
+      var objectOfDoctorsCounts = {};
+
+      for (var i = 0; i < attendingOutput.length; i++) {
+        var currentDoc = attendingOutput[i];
+        // if current doc has not been counted yet
+        if (objectOfDoctorsCounts[currentDoc] === undefined) {
+          objectOfDoctorsCounts[currentDoc] = 1;
+        } else {
+          objectOfDoctorsCounts[currentDoc]++;
+        }
+      }
+      console.log(objectOfDoctorsCounts);
+
+      // TITLE:Using an Object to Count Elements part 1
+      var result1 = countWords("ask a bunch get a bunch");
+      console.log('should log "{ask: 1, a: 2, bunch: 2, get: 1}":', result1);
+
+      var result2 = countWords("");
+      console.log('should log "{}":', result2);
+
+      function countWords(stringOfWords) {
+        // your code here
+        var objOfWordsCounts = {};
+
+        if (stringOfWords !== "") {
+          var arrayWords = stringOfWords.split(" ");
+          for (let i = 0; i < arrayWords.length; i++) {
+            var currentWord = arrayWords[i];
+
+            if (objOfWordsCounts[currentWord] === undefined) {
+              objOfWordsCounts[currentWord] = 1;
+            } else {
+              objOfWordsCounts[currentWord]++;
+            }
+          }
+        }
+
+        return objOfWordsCounts;
+      }
+
+      //   TITLE:Using an Object to Count Elements part 2
+      var result1 = countAllCharacters("banana");
+      console.log('should log "{b: 1, a: 3, n: 2}":', result1);
+
+      var result2 = countAllCharacters("");
+      console.log('should log "{}":', result2);
+
+      function countAllCharacters(string) {
+        // your code here
+        var objOfCharCounts = {};
+
+        for (let i = 0; i < string.length; i++) {
+          var currentChar = string[i];
+
+          if (objOfCharCounts[currentChar] === undefined) {
+            objOfCharCounts[currentChar] = 1;
+          } else {
+            objOfCharCounts[currentChar]++;
+          }
+        }
+
+        return objOfCharCounts;
+      }
+    </script>
+  </body>
+</html>

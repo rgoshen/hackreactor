@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            // TITLE: loop over a series of numbers
+            loopASequenceAgain(2, 5);
+            loopASequenceAgain(3, 7);
+
+            function loopASequenceAgain(start, end) {
+                // create a loop which loops from start to end
+                // log current value to console
+                for (let index = start; index <= end; index++) {
+                    console.log(index);
+                };
+                console.log('---');
+            }
+            // TITLE: loop over an array
+            loopAnstringAgain(['a', 'b', 'c', 'd']);
+            loopAnstringAgain([1, 2, 3, 4, 5]);
+
+            function loopAnstringAgain(array) {
+                // create a loop which iterates over the input string
+                // log current string element to the console
+                for (let i = 0; i < array.length; i++) {
+                    console.log(array[i]);
+                };
+                console.log('---');
+            }
+            // TITLE: loop over a string
+            loopAStringAgain('nodeJS');
+            loopAStringAgain('abcd');
+
+            function loopAStringAgain(string) {
+                // create a loop which iterates over the input string
+                // log current string character to the console
+                for (let i = 0; i < string.length; i++) {
+                    console.log(string[i]);
+                };
+                console.log('---');
+            }
+            // TITLE: loop over every other value
+            loopEveryOther(['a', 'b', 'c', 'd']);
+            loopEveryOther([1, 2, 3, 4, 5]);
+
+            function loopEveryOther(array) {
+                // create a loop which iterates over every other element of the input array
+                // log every other array element to the console
+                for (let i = 0; i < array.length; i += 2) {
+                    console.log(array[i]);
+                };
+                console.log('---');
+            }
+            // TITLE: Loop starting at a specific index
+            loopStartingAtIndex(['a', 'b', 'c', 'd', 'e'], 2);
+            loopStartingAtIndex([1, 2, 3, 4, 5], 3);
+
+            function loopStartingAtIndex(array, index) {
+                // create a loop which iterates from index to the end of the input array
+                // log current array element to the console
+                for (let i = index; i < array.length; i++) {
+                    console.log(array[i]);
+                };
+                console.log('---');
+            }
+
+            // TITLE: Loop in "reverse" order
+            loopInReverse(['a', 'b', 'c', 'd']);
+            loopInReverse([1, 2, 3, 4]);
+
+            function loopInReverse(array) {
+                // create a loop which iterates from back to front of the input array
+                // log current array element to the console
+                for (let i = array.length - 1; i > -1; i--) {
+                    console.log(array[i]);
+                };
+                console.log('---');
+            }
+
+            // TITLE: using continue
+            useContinue(['a', 'b', 'c', 'd'], 1);
+            useContinue([1, 2, 3, 4], 2);
+
+            function useContinue(array, index) {
+                // create a loop which iterates over the input array
+                // if current index is equal to input index
+                // use described statement to skip to next iteration of loop (must include semi-colon!)
+                // log current array element to the 
+                for (let i = 0; i < array.length; i++) {
+                    if (i === index) {
+                        continue;
+                    }
+
+                    console.log(array[i]);
+                };
+                console.log('---');
+            }
+
+            // TITLE: using break
+            useBreak(['a', 'b', 'c', 'd', 'e'], 2);
+            useBreak([1, 2, 3, 4, 5, 6], 3);
+
+            function useBreak(array, index) {
+                // create a loop which iterates over the input array
+                // if current index is greater than input index
+                // use described statement to stop the loop completely (must include semi-colon!)
+                // log current array element to the console
+                for (let i = 0; i < array.length; i++) {
+                    if (i > index) {
+                        break;
+                    }
+
+                    console.log(array[i]);
+                };
+                console.log('---');
+            }
+        </script>
+    </body>
+
+</html>

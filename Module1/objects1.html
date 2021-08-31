@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            // TITLE: getProperty
+            /*
+            Write a function called "getProperty". Given an object and a key, "getProperty"
+            returns the value of the property at the given key. Notes:
+                If there is no property at the given key, it should return undefined.
+            */
+
+            var obj = {
+                key: 'value'
+            };
+            var output = getProperty(obj, 'key');
+            console.log(output); // --> 'value'
+
+            function getProperty(obj, key) {
+                // your code here
+                var objProperty = obj[key];
+
+                if (objProperty) {
+                    return obj[key];
+                }
+
+                return objProperty;
+            }
+
+            // TITLE: addProperty
+            /*
+            Write a function called "addProperty". Given an object, and a key, "addProperty
+            sets a new property on the given object with a value of true.
+            */
+
+            var myObj = {};
+            addProperty(myObj, 'myProperty');
+            console.log(myObj.myProperty); // --> true
+
+            function addProperty(obj, key) {
+                // your code here
+                obj[key] = true;
+
+                return obj;
+            }
+
+            // TITLE: removeProperty
+            /*
+            Write a function called "removeProperty". Given an object and a key,
+            "removeProperty" removes the given key from the given object.
+            */
+
+            var obj = {
+                name: 'Sam',
+                age: 20
+            }
+            removeProperty(obj, 'name');
+            console.log(obj.name); // --> undefined
+
+            function removeProperty(obj, key) {
+                // your code here
+                delete obj[key];
+
+                return obj;
+            }
+        </script>
+    </body>
+
+</html>

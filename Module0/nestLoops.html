@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            // TITLE: Nested for loop
+            loopAnArrayOfArrays([
+                ['a', 'b', 'c'],
+                ['d', 'e', 'f']
+            ]);
+            loopAnArrayOfArrays([
+                [1, 2],
+                [3, 4],
+                [5],
+                [6, 7, 8]
+            ]);
+
+            function loopAnArrayOfArrays(arrayOfArrays) {
+                // create a loop which iterates over the input array
+                // create an inner loop which iterates over current inner array
+                // log current element to the console
+                for (let i = 0; i < arrayOfArrays.length; i++) {
+                    for (let j = 0; j < arrayOfArrays[i].length; j++) {
+                        console.log(arrayOfArrays[i][j]);
+                    };
+                };
+                console.log('---');
+            }
+            // TITLE: nested for-in loop
+            loopAnObjectOfObjects({
+                a: {
+                    a: 1,
+                    b: 2
+                },
+                b: {
+                    a: 5,
+                    b: 6
+                }
+            });
+            loopAnObjectOfObjects({
+                structures: {
+                    queue: true,
+                    stack: false
+                },
+                plantLife: {
+                    tree: 'leaves'
+                },
+                letters: {
+                    apple: 'a',
+                    bag: 'b',
+                    cats: 'c'
+                }
+            });
+
+            function loopAnObjectOfObjects(nestedObject) {
+                // create a loop which iterates over the input object
+                // create an inner loop which iterates over current inner object
+                // log current value to the console
+                for (object in nestedObject) {
+                    for (innerObject in nestedObject[object]) {
+                        console.log(nestedObject[object][innerObject]);
+                    };
+                };
+                console.log('---');
+            }
+            // TITLE: Nested Mixed Loop (object(s) inside an array)
+            loopAnArrayOfObjects([{
+                a: 1,
+                b: 2
+            }, {
+                z: 5,
+                y: 6
+            }, {
+                q: 14
+            }]);
+            loopAnArrayOfObjects([{
+                queue: false,
+                stack: true
+            }, {
+                fish: 'swims'
+            }, {
+                shirt: 's',
+                pop: 'p',
+                eye: 'e'
+            }]);
+
+            function loopAnArrayOfObjects(arrayOfObjects) {
+                // create a loop which iterates over the input array
+                // create an inner loop which iterates over current inner object
+                // log current value to the console
+                for (let i = 0; i < arrayOfObjects.length; i++) {
+                    const currentObj = arrayOfObjects[i];
+                    for (var key in currentObj) {
+                        console.log(currentObj[key]);
+                    };
+                };
+                console.log('-----');
+            }
+            // TITLE: Nested Mixed Loop (array(s) inside an object)
+            loopAnObjectOfArrays({
+                first: [1, 2, 5],
+                second: [6, 14, 21]
+            });
+            loopAnObjectOfArrays({
+                third: [false, false],
+                fourth: ['runs'],
+                ninth: ['q', 'l', 'z']
+            });
+
+            function loopAnObjectOfArrays(objectOfArrays) {
+                // create a loop which iterates over the input object
+                // create an inner loop which iterates over current inner array
+                // log current value to the console
+                for (var key in objectOfArrays) {
+                    var currentObj = objectOfArrays[key];
+                    for (let i = 0; i < currentObj.length; i++) {
+                        console.log(currentObj[i]);
+                    };
+                };
+                console.log('______');
+            }
+            // TITLE: All Combinations using For Loops
+            generateCombinations(['a', 'b', 'c'], ['d', 'e', 'f']);
+            generateCombinations([1, 2], ['buckle', 'my', 'shoe']);
+
+            function generateCombinations(array1, array2) {
+                // create a loop which iterates over the first array
+                // create an inner loop which iterates over the second array
+                // log current element of first array and current element of second array to the console with space in between
+                for (let i = 0; i < array1.length; i++) {
+                    for (let j = 0; j < array2.length; j++) {
+                        console.log(array1[i] + array2[j]);
+                    };
+                };
+                console.log('___');
+            }
+        </script>
+    </body>
+
+</html>

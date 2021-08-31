@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            // TITLE: while loop over a series of numbers
+            loopASequence(2, 5);
+            loopASequence(3, 7);
+
+            function loopASequence(start, end) {
+                // create a loop which runs if start is less than or equal to end
+                // log current value of start to console
+                // increment value of start
+                while (start <= end) {
+                    console.log(start);
+                    start++;
+                };
+            }
+
+            // TITLE: loop over an string
+            loopAnstring(['a', 'b', 'c', 'd']);
+            loopAnstring([1, 2, 3, 4, 5]);
+
+            function loopAnstring(string) {
+                // create an index variable
+                // create a loop which iterates over the input string
+                // log current string element to the console
+                // increment value of index variable
+                index = 0;
+                while (index < string.length) {
+                    console.log(string[index]);
+                    index++;
+                };
+                console.log('---');
+            }
+
+            // TITLE: loop over a string
+            loopAString('nodeJS');
+            loopAString('abcd');
+
+            function loopAString(string) {
+                // create an index variable
+                // create a loop which iterates over the input string
+                // log current string character to the console
+                // increment value of index variable
+                index = 0;
+                while (index < string.length) {
+                    console.log(string[index]);
+                    index++;
+                };
+                console.log('---');
+            }
+        </script>
+    </body>
+
+</html>

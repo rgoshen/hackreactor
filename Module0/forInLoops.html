@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            // TITLE:For-in loop over an object (keys)
+            loopOverKeys({
+                a: 1,
+                b: 2,
+                c: 3
+            });
+            loopOverKeys({
+                make: 'Ford',
+                model: 'T',
+                year: 1913
+            });
+
+            function loopOverKeys(object) {
+                // create a loop which iterates over the input object
+                // log current key to the console
+                for (var key in object) {
+                    console.log('current key: ', key);
+                };
+                console.log('---');
+            }
+            // TITLE:For-in loop over an object (values)
+            loopOverKeys1({
+                a: 1,
+                b: 2,
+                c: 3
+            });
+            loopOverKeys1({
+                make: 'Ford',
+                model: 'T',
+                year: 1913
+            });
+
+            function loopOverKeys1(object) {
+                // create a loop which iterates over the input object
+                // log current key to the console
+                for (const key in object) {
+                    console.log('current value: ', object[key]);
+                };
+                console.log('---');
+            }
+        </script>
+    </body>
+
+</html>

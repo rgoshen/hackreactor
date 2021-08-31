@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            // TITLE: if statements with an array
+            var result1 = findAgent(['001', '005', '007', '009'], '007');
+            console.log('should log "007 is present within Agent list":', result1);
+
+            var result2 = findAgent(['tiny', 'teeny', 'eeny', 'meany'], 'teeny');
+            console.log('should log "teeny is present within Agent list":', result2);
+
+            var result3 = findAgent(['red', 'blue', 'green'], 'orange');
+            console.log('Should log undefined, because function returned nothing:', result3);
+
+            function findAgent(agentList, agentToSearchFor) {
+                // if agentToSearchFor is present within agentList
+                // return '{agentToSearchFor} is present within Agent list'
+                if (agentList.indexOf(agentToSearchFor) > -1) {
+                    return agentToSearchFor + ' is present within Agent list'
+                };
+            }
+
+            // TITLE: if statements with an object are
+            var result1 = generateReportSummary({
+                a_team: 12,
+                b_team: 7,
+                c_team: 0
+            }, 'b_team');
+            console.log('should log "b_team has surpassed goal with 7 reports":', result1);
+
+            var result2 = generateReportSummary({
+                blue: 18,
+                red: 8,
+                green: 12
+            }, 'blue');
+            console.log('should log "blue has surpassed goal with 18 reports":', result2);
+
+            var result3 = generateReportSummary({
+                gamma: 1,
+                epsilon: 3,
+                alpha: 4,
+                bravo: 17
+            }, 'alpha');
+            console.log('Should log undefined, because function returned nothing:', result3);
+
+            function generateReportSummary(reportTotals, teamName) {
+                // if teamName's report total is greater than 5
+                // return '{teamName} has surpassed goal with {number_of_reports_for_team} reports'
+                if (reportTotals[teamName] > 5) {
+                    return teamName + ' has surpassed goal with ' + reportTotals[teamName] + ' reports'
+                };
+            }
+
+            // TITLE: if else statements with truthy
+            var result1 = isItTruthy('anything');
+            console.log('should log "Input is truthy":', result1);
+
+            var result2 = isItTruthy();
+            console.log('should log "Input is falsy":', result2);
+
+            var result3 = isItTruthy("");
+            console.log('should log "Input is falsy":', result3);
+
+            var result4 = isItTruthy(false);
+            console.log('should log "Input is falsy":', result4);
+
+            function isItTruthy(param) {
+                // if param is truthy
+                // return 'Input is truthy'
+                // otherwise
+                // return 'Input is falsy'
+
+                if (param) {
+                    return 'Input is truthy';
+                } else {
+                    return 'Input is falsy';
+                };
+
+            }
+
+            // TITLE: if else statements with arrays
+            var result1 = findIngredient(['flour', 'butter', 'sugar', 'eggs'], 'sugar');
+            console.log('should log "sugar is on the list":', result1);
+
+            var result2 = findIngredient(['milk', 'cereal', 'fruit'], 'pop-tarts');
+            console.log('should log "pop-tarts is not on the list":', result2);
+
+            function findIngredient(ingredientList, ingredientToSearchFor) {
+                // if ingredientToSearchFor is present within ingredientList
+                // return '{ingredientToSearchFor} is on the list'
+                // otherwise
+                // return '{ingredientToSearchFor} is not on the list'
+                if (ingredientList.indexOf(ingredientToSearchFor) > -1) {
+                    return ingredientToSearchFor + ' is on the list';
+                } else {
+                    return ingredientToSearchFor + ' is not on the list';
+                };
+            }
+
+            // TITLE: if else statements with object
+            var result1 = measureRequiredFruit({
+                bananas: 4,
+                strawberries: 12
+            });
+            console.log('should log "We have enough fruit, with 4 bananas, and 12 strawberries":', result1);
+
+            var result2 = measureRequiredFruit({
+                bananas: 5,
+                strawberries: 15
+            });
+            console.log('should log "We have enough fruit, with 5 bananas, and 15 strawberries":', result2);
+
+            var result3 = measureRequiredFruit({
+                bananas: 2,
+                strawberries: 12
+            });
+            console.log('should log "We do not have enough of both fruits":', result3);
+
+            var result4 = measureRequiredFruit({
+                bananas: 5,
+                strawberries: 8
+            });
+            console.log('should log "We do not have enough of both fruits":', result4);
+
+            var result5 = measureRequiredFruit({
+                bananas: 3,
+                strawberries: 9
+            });
+            console.log('should log "We do not have enough of both fruits":', result5);
+
+            function measureRequiredFruit(fruitTotals) {
+                // if there are more than 3 bananas and more than 10 strawberries
+                // return 'We have enough fruit, with {totalBananas} bananas, and {totalStrawberries} strawberries'
+                // otherwise
+                // return 'We do not have enough of both fruits'
+
+                if (fruitTotals.bananas > 3 && fruitTotals.strawberries > 10) {
+                    return `We have enough fruit, with ${fruitTotals.bananas} bananas, and ${fruitTotals.strawberries} strawberries`;
+                } else {
+                    return 'We do not have enough of both fruits';
+                };
+            }
+        </script>
+    </body>
+
+</html>

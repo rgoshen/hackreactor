@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            // TITLE: Create array
+            var resultArray = createArray();
+            console.log('should be an array:', Array.isArray(resultArray));
+
+            function createArray() {
+                // create a result variable,
+                // assign it to a new array
+                // return the result variable
+                return result = [];
+            }
+
+            // TITLE:Access and element
+            var resultElement = accessAnElement(['Computer', 'Mouse', 'Ethernet Cable'], 1);
+            console.log('should be "Mouse":', resultElement);
+
+            function accessAnElement(array, index) {
+                // create a result variable,
+                // assign it to an expression that accesses the element within array at the index
+                // return the result variable
+                return result = array[index];
+            }
+
+            // TITLE: Reassign an element
+            var resultArray = reassignAnElement(['desk', 'lamp', 'chewtoy'], 2, 'textbook');
+            console.log('should replace "chewtoy" with "textbook":', resultArray);
+
+            function reassignAnElement(array, index, newValue) {
+                // reassign the value in the array, located at the index, to the newValue parameter
+                // return the input array
+                array[index] = newValue;
+                return array;
+            }
+
+            // TITLE: Array length 
+            var resultLength1 = getArrayLength([1, 3, 4, 5, 7]);
+            console.log('should log 5:', resultLength1);
+
+            var resultLength2 = getArrayLength(['a', 'b', 'c', 'd']);
+            console.log('should log 4:', resultLength2);
+
+            function getArrayLength(array) {
+                // create a length variable
+                // assign it to the length of the array
+                // return the length variable
+                return length = array.length;
+            }
+
+            // TITLE: Get last element
+            var resultLastElement1 = getLastElement([1, 2, "buckle", "my", "shoe"]);
+            console.log('should log "shoe":', resultLastElement1);
+
+            var resultLastElement2 = getLastElement([3, 4, "shut", "the", "door"]);
+            console.log('should log "door":', resultLastElement2);
+
+            function getLastElement(array) {
+                // create a lastIndex variable
+                // assign it to the last index in the array
+                // create a lastElement variable
+                // assign it to the last element in the string (make use of lastIndex)
+                // return the lastElement variable
+                var lastIndex = array.length - 1;
+                return lastElement = array[lastIndex];
+            }
+
+            // TITLE: Add element to end
+            var resultArray1 = applyPush([1, 17, 29], 34);
+            console.log('should log [1, 17, 29, 34]:', resultArray1);
+
+            var resultArray2 = applyPush(['abc', 'def'], 'ghi');
+            console.log('should log ["abc", "def", "ghi"]:', resultArray2);
+
+            function applyPush(array, element) {
+                // add the element to the back of the array
+                // return the array
+
+                array.push(element);
+                return array;
+            }
+
+            // TITLE: Remove element from end
+            var resultElement1 = applyPop([1, 171, 129]);
+            console.log('should log 129:', resultElement1);
+
+            var resultElement2 = applyPop(['islands', 'peninsulas', 'pacific']);
+            console.log('should log pacific:', resultElement2);
+
+            function applyPop(array) {
+                // create a popped variable
+                // assign it to an expression removing the last element from the array
+                // return the popped variable
+                var lastElement = array.pop();
+                return lastElement;
+            }
+
+            // TITLE: Add element to the front
+            var resultArray1 = applyUnshift([7, 9, 4], 1);
+            console.log('should log [1, 7, 9, 4]:', resultArray1);
+
+            var resultArray2 = applyUnshift(['ef', 'hi'], 'bc');
+            console.log('should log ["bc", "ef", "hi"]:', resultArray2);
+
+            function applyUnshift(array, element) {
+                // add the element to the front of the array
+                // return the array
+                array.unshift(element);
+                return array;
+            }
+
+            // TITLE: Remove an element from the front
+            var resultElement1 = applyShift([1, 171, 129]);
+            console.log('should log 1:', resultElement1);
+
+            var resultElement2 = applyShift(['islands', 'peninsulas', 'pacific']);
+            console.log('should log islands:', resultElement2);
+
+            function applyShift(array) {
+                // create a shifted variable
+                // assign it to an expression removing the first element from the array
+                // return the shifted variable
+                var shifted = array.shift();
+                return shifted;
+            }
+
+            // TITLE: Add an element in general
+            var resultArray1 = addAnElementInGeneral([7, 9, 10], 1, 8);
+            console.log('should log [7, 8 , 9, 10]:', resultArray1);
+
+            var resultArray2 = addAnElementInGeneral(['q', 'r', 't'], 2, 's');
+            console.log('should log ["q", "r", "s", "t"]:', resultArray2);
+
+            function addAnElementInGeneral(array, index, element) {
+                // add the element to the array at the index given
+                // (be sure not to replace any existing elements)
+                // return the array
+                array.splice(index, 0, element);
+                return array;
+            }
+
+            // TITLE: Remove an element in general
+            var resultArray1 = removeAnElementInGeneral([8, 9, 10, 'bad entry', 11], 3);
+            console.log('should log [8, 9, 10, 11]:', resultArray1);
+
+            var resultArray2 = removeAnElementInGeneral(['one', 'two', 452, 'three'], 2);
+            console.log('should log ["one", "two", "three"]:', resultArray2);
+
+            function removeAnElementInGeneral(array, index) {
+                // remove the element from the array at the index given
+                // return the array
+                array.splice(index, 1);
+                return array;
+            }
+
+            // TITLE: Remove elements anywhere in an array and replace with new elements
+            var resultArray1 = applySplice([8, 9, 10, 'bad entry1', 'bad entry2', 13], 3, 11, 12);
+            console.log('should log [8, 9, 10, 11, 12, 13]:', resultArray1);
+
+            var resultArray2 = applySplice(['one', 'two', 452, 672, 'five'], 2, 'three', 'four');
+            console.log('should log ["one", "two", "three", "four", "five"]:', resultArray2);
+
+            function applySplice(array, index, item1, item2) {
+                // remove two elements from the array at the index given, and adds item1 and item2 in their place
+                // return the array
+                array.splice(index, 2, item1, item2);
+                return array;
+            }
+
+            // TITLE: Determine if an array
+            var resultBoolean1 = isAnArray([1, 2, 3]);
+            console.log('should log true:', resultBoolean1);
+
+            var resultBoolean2 = isAnArray({
+                name: 'Tom',
+                friend: 'Jerry'
+            });
+            console.log('should log false:', resultBoolean2);
+
+            function isAnArray(input) {
+                // create a result variable
+                // assign it to a call to the applicable method
+                // return the result variable
+                return result = Array.isArray(input);
+            }
+
+            // TITLE: Assign a portion of the array from before start, up to, but not including end
+            var array1 = ['Q', 'u', 'e', 'u', 'e'];
+            var resultOfSlice1 = applySlice(array1, 1, 4);
+            console.log('should log ["u", "e", "u"]:', resultOfSlice1);
+
+            var array2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            var resultOfSlice2 = applySlice(array2, 2, 8);
+            console.log('should log [2, 3, 4, 5, 6, 7]:', resultOfSlice2);
+
+            function applySlice(array, start, end) {
+                // create a sliceOfArray variable
+                // assign it to a portion of the array from before start, up to, but not including end
+                // return the sliceOfArray variable
+                return sliceOfArray = array.slice(start, end);
+            }
+
+            // TITLE: Make a copy of the array
+            var array1 = ['Q', 'u', 'e', 'u', 'e'];
+            var resultCopy1 = makeACopy(array1);
+            console.log('should log ["Q", "u", "e", "u", "e"]:', resultCopy1);
+
+            var array2 = [0, 1, 2, 3, 4];
+            var resultCopy2 = makeACopy(array2);
+            console.log('should log [0, 1, 2, 3, 4]:', resultCopy2);
+
+            function makeACopy(array) {
+                // create a copyOfArray variable
+                // assign it to a copy of the array
+                // return the copyOfArray variable
+                return copyOfArray = array.slice();
+            }
+
+            // TITLE: Concatenate 2 or more arrays into a single array
+            var array1 = ['a', 'b', 'c'];
+            var array2 = ['d', 'e', 'f']
+            var resultConcat1 = applyConcat(array1, array2);
+            console.log('should log ["a", "b", "c", "d", "e", "f"]:', resultConcat1);
+
+            var array3 = [1, 2, 3];
+            var array4 = [4, 5, 6];
+            var resultConcat2 = applyConcat(array3, array4);
+            console.log('should log [1, 2, 3, 4, 5, 6]:', resultConcat2);
+
+            function applyConcat(array1, array2) {
+                // create a concattedArray variable
+                // assign it to the contents of both array1 and array2
+                // return the concattedArray variable
+                return concattedArray = array1.concat(array2);
+            }
+
+            // TITLE: Convert an array to string using join with a specified separator
+            var resultString1 = applyJoin(['first', 'second', 'third'], '--');
+            console.log('should log joined string:', resultString1);
+
+            var resultString2 = applyJoin(['git', 'commit'], ' ');
+            console.log('should also log joined string:', resultString2);
+
+            function applyJoin(arrayOfStrings, string) {
+                // create a joinedString variable
+                // assign it to a string which is all of the strings in the input array separated by the input string
+                // return the joinedString variable
+                return joinedString = arrayOfStrings.join(string);
+            }
+
+            // TITLE: Convert a string to an array using split
+            var resultArray1 = applySplit('first--second--third', '--');
+            console.log('should log split string:', resultArray1);
+
+            var resultArray2 = applySplit('git push origin master', ' ');
+            console.log('should also log split string:', resultArray2);
+
+            function applySplit(stringToBeSplit, splitter) {
+                // create a splitString variable
+                // assign it to an array which contains the elements in the stringToBeSplit separated by the splitter
+                // return the splitString variable
+                return splitString = stringToBeSplit.split(splitter);
+            }
+
+            // TITLE: Get the index of a specific element
+            var array1 = ['Quick', 'sort', 'is', 'wild'];
+            var element1 = 'sort';
+            var resultIndex1 = applyIndexOfToArray(array1, element1);
+            console.log('should log 1:', resultIndex1);
+
+            var array2 = ['size', 'color', 'cut', 'price'];
+            var element2 = 'style';
+            var resultIndex2 = applyIndexOfToArray(array2, element2);
+            console.log('should log -1:', resultIndex2);
+
+            function applyIndexOfToArray(array, element) {
+                // create an index variable
+                // assign it to the index inside of array where element can be found
+                // return the index variable
+                return index = array.indexOf(element);
+            }
+        </script>
+    </body>
+
+</html>

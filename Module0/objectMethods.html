@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            // TITLE: Create an object
+            var resultObject = createObject();
+            console.log('should be an object:', typeof resultObject);
+            console.log('should not be an array:', Array.isArray(resultObject));
+
+            function createObject() {
+                // create a result variable,
+                // assign it to a new object
+                // return the result variable
+                return result = {};
+            }
+
+            // TITLE: Access a property
+            var resultValue = accessAProperty({
+                machine: 'Computer',
+                type: 'Macbook',
+                ram: '2 GHz'
+            }, 'ram');
+            console.log('should be "2 GHz":', resultValue);
+
+            function accessAProperty(object, key) {
+                // create a result variable,
+                // assign it to an expression that accesses the property in the object located at the key
+                // return the result variable
+                return result = object[key];
+            }
+
+            // TITLE: Reassign a property
+            var resultObject = reassignAProperty({
+                name: 'Ramses',
+                favoriteFood: 'chicken',
+                type: 'dog'
+            }, 'favoriteFood', 'goose');
+            console.log('should replace "chicken" with "goose":', resultObject);
+
+            function reassignAProperty(object, key, newValue) {
+                // reassign the property's value in the object, located at the key, to the newValue parameter
+                // return the input object
+                object[key] = newValue;
+                return object;
+            }
+
+            // TITLE: Remove a property
+            var resultObject1 = removeAProperty({
+                q: 9,
+                r: 10,
+                text: 'bad entry'
+            }, 'text');
+            console.log('should log {q: 9, r: 10}:', resultObject1);
+
+            var resultObject2 = removeAProperty({
+                first: 'one',
+                second: 'two',
+                why: 452,
+                third: 'three'
+            }, 'why');
+            console.log('should log {first: "one", second: "two", third: "three"}:', resultObject2);
+
+            function removeAProperty(object, key) {
+                // remove the property at the given key from the object
+                // return the object
+                delete object[key];
+                return object;
+            }
+
+            // TITLE: Object property present
+            var object1 = {
+                a: 1,
+                b: 2
+            }
+            var key1 = 'c';
+            var result1 = isPropertyPresent(object1, key1);
+            console.log('should log false:', result1);
+
+            var object2 = {
+                'size': 'M',
+                'color': 'green',
+                'cut': 'tapered',
+                'price': 30
+            };
+            var key2 = 'cut';
+            var result2 = isPropertyPresent(object2, key2);
+            console.log('should log true:', result2);
+
+            function isPropertyPresent(object, key) {
+                // create an isPresent variable
+                // assign it to a comparison between object's value at key and undefined
+                // return the isPresent variable
+                var isPresent = object[key];
+                if (isPresent) {
+                    return true;
+                } else {
+                    return false;
+                };
+            }
+
+            // TITLE: Is an object
+            var resultBoolean1 = isAnObject([1, 2, 3]);
+            console.log('should log false:', resultBoolean1);
+
+            var resultBoolean2 = isAnObject({
+                name: 'Tom',
+                friend: 'Jerry'
+            });
+            console.log('should log true:', resultBoolean2);
+
+            function isAnObject(input) {
+                // create an isObject variable
+                // assign it to whether the input is an object type
+                // create an isNotAnArray variable
+                // assign it to whether the input is not an array
+                // create an isObjectAndNotAnArray variable
+                // assign it to a combination of isObject AND isNotAnArray
+                // return the isObjectAndNotAnArray variable
+                var isObject = typeof input === 'object';
+                var isNotAnArray = !Array.isArray(input);
+                return isObjectAndNotAnArray = isObject && isNotAnArray;
+            }
+
+            // TITLE: Get all keys
+            var resultKeys = getAllKeys({
+                firstScore: 12,
+                secondScore: 34,
+                thirdScore: 28
+            });
+            console.log('should log ["firstScore", "secondScore", "thirdScore"]:', resultKeys);
+
+            function getAllKeys(obj) {
+                // create a keys variable
+                // assign it to an expression which will generate an array of all of the keys in obj
+                // return to the keys variable
+                return keys = Object.keys(obj);
+            }
+
+            // TITLE: Get all values
+            var resultValues = getAllValues({
+                firstScore: 12,
+                secondScore: 34,
+                thirdScore: 28
+            });
+            console.log('should log [12, 34, 28]:', resultValues);
+
+            function getAllValues(obj) {
+                // create a values variable
+                // assign it to an expression which will generate an array of all of the values in obj
+                // return to the values variable
+                return keys = Object.values(obj);
+            }
+        </script>
+    </body>
+
+</html>
